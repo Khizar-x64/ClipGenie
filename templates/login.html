@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClipGenie Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
+    <script src="{{ url_for('static', filename='js/firebase-config.js') }}"></script>
+    <style>
+        .gradient-bg {
+            background: #13072e;
+        }
+        
+        .form-container {
+            background: #11113a;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        
+        .login-input {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+            color: black;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: #8B5CF6;
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+
+        .primary-button {
+            background: #8B5CF6;
+            transition: all 0.3s ease;
+        }
+
+        .primary-button:hover {
+            background: #7C3AED;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-6xl flex justify-between items-center gap-8">
+        <!-- Login Form Section -->
+        <div class="w-full max-w-md form-container">
+            <h1 class="text-white text-2xl font-semibold mb-8">Welcome to ClipGenie</h1>
+            
+            <form id="loginForm" class="space-y-6">
+                <!-- Email Input -->
+                <div>
+                    <label class="block text-white mb-2 text-left">Email</label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        class="login-input"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+                
+                <!-- Password Input -->
+                <div>
+                    <label class="block text-white mb-2 text-left">Password</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        class="login-input"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <!-- Login Button -->
+                <button 
+                    type="submit" 
+                    class="primary-button w-full py-3 text-white rounded-lg font-medium"
+                >
+                    Login
+                </button>
+
+                <div class="text-center">
+                    <span class="text-white">Don't have an account?</span>
+                </div>
+                
+                <a 
+                    href="/signup" 
+                    class="secondary-button w-full py-3 text-white rounded-lg font-medium text-center block"
+                >
+                    Sign Up →
+                </a>
+            </form>
+        </div>
+
+        <!-- Logo Section -->
+        <div class="hidden lg:block w-full max-w-xl text-center">
+            <div class="logo-container mb-8 flex justify-center items-center p-8">
+                <img 
+                    src="D:/clip/ClipGenie/static/images/lo.png" 
+                    alt="ClipGenie Logo" 
+                    class="w-100 h-100 mx-auto object-contain"
+                >
+            </div>
+            <h2 class="text-white text-5xl font-bold mb-4">YOUR VIDEO MAGIC PARTNER</h2>
+        </div>
+    </div>
+</body>
+</html>
